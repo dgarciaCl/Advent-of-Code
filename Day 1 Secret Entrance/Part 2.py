@@ -23,4 +23,6 @@ for rotation in vfid:
     pwd += zeros
     dial = rem
 
+vfid.close()
+
 print("The password to open the door is", int(pwd))

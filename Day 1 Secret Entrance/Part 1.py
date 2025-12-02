@@ -22,4 +22,6 @@ for rotation in vfid:
     if dial == 0:
         pwd += 1
 
+vfid.close()
+
 print("The actual password to open the door is", pwd)
