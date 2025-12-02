@@ -9,18 +9,39 @@ bool invalidID(string ID) {
     // An ID starting with 0 is not a valid ID
     if (ID[0] == '0') {
         return true;
-    // An ID formed by repeating a substring cant have an odd length
-    } else if (ID.length() % 2 == 1) {
-        return false;
-    // If it has an even length, we look at its first half
+    // Change this comment
     } else {
-        string substring = ID.substr(0, (ID.length()) / 2);
+        int len = ID.length();
+        vector <int> divs;
 
-        // It it can be reconstructed from its first half it is not valid
-        if (ID == substring + substring) {
-            return true;
+        // Find all the possible lengths of a repeating sequence
+        for (int i = 1; i < len; i++) {
+            if (len % i == 0) {
+                divs.push_back(i);
+            }
         }
 
+        // Loop through all possible lengths to check for a sequence
+        for (int i = 0; i < divs.size(); i++) {
+            int div = divs[i];
+            int reps = len / div;
+
+            bool invalid = true;
+
+            // Check if our ID is like the one formed from the sequence
+            for (int j = 0; j < reps; j++) {
+                // If they are different at any point, the sequence is discarted
+                if (ID.substr(0, div) != ID.substr(div * j, div)) {
+                    invalid = false;
+                }
+            }
+
+            // If at no point were they different, the ID is not valid
+            if (invalid) {
+                return true;
+            }
+        }
+        
         return false;
     }
 }
@@ -78,7 +99,7 @@ int main() {
         result += num;
     }
 
-    cout << "If you add up all of the invalid IDs you get " << result << endl;
+    cout << "Using this new rules, if you add up all of the invalid IDs you get " << result << endl;
 
     file.close();
 
