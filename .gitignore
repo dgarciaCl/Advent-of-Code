@@ -1,0 +1,11 @@
+# Ignore Windows executables
+*.exe
+
+# Ignore object files (compiler intermediates)
+*.o
+*.obj
+
+# Ignore build folders (optional, common)
+build/
+bin/
+out/
