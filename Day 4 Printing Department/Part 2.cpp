@@ -27,6 +27,8 @@ int main() {
         input.push_back(line);
     }
 
+    file.close();
+
     int totalAccessedRolls = 0;
     bool remove = true;
 
@@ -89,8 +91,6 @@ int main() {
     }
 
     cout << "In total, " << totalAccessedRolls << " rolls of paper can be removed by the Elves and their forklifts" << endl;
-
-    file.close();
 
     return 0;
 }

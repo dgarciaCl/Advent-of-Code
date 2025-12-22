@@ -21,6 +21,8 @@ int main() {
         input.push_back(line);
     }
 
+    file.close();
+
     vector <vector <string>> problems;
 
     // Find the numbers in our imput
@@ -75,8 +77,6 @@ int main() {
     }
 
     cout << "The grand total found by adding together all of the answers to the individual problems is " << grandtotal << endl;
-
-    file.close();
 
     return 0;
 }

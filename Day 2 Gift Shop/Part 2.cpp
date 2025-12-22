@@ -58,6 +58,8 @@ int main() {
     string input;
     getline(file, input);
 
+    file.close();
+
     vector <string> IDs;
     int start = 0;
 
@@ -100,8 +102,6 @@ int main() {
     }
 
     cout << "Using this new rules, if you add up all of the invalid IDs you get " << result << endl;
-
-    file.close();
 
     return 0;
 }

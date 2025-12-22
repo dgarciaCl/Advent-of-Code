@@ -27,6 +27,8 @@ int main() {
         input.push_back(line);
     }
 
+    file.close();
+
     // Insert padding above and below
     input.insert(input.begin(), padding);
     input.insert(input.end(), padding);
@@ -66,8 +68,6 @@ int main() {
     }
 
     cout << accessedRolls << " rolls of paper can be accessed by a forklift" << endl;
-
-    file.close();
 
     return 0;
 }

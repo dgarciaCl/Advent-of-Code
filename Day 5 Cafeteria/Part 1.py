@@ -23,6 +23,8 @@ for line in vfid:
     else:
         IDs.append(int(line[: -1]))
 
+vfid.close()
+
 fresh = 0
 
 # Loop through our ingredient IDs
@@ -40,5 +42,3 @@ for ingredient in IDs:
         fresh += 1
 
 print(fresh, "of the available ingredient IDs are fresh")
-
-vfid.close()

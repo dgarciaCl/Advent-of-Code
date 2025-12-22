@@ -5,6 +5,9 @@
 *.o
 *.obj
 
+#Ignore test text files
+test.txt
+
 # Ignore build folders (optional, common)
 build/
 bin/

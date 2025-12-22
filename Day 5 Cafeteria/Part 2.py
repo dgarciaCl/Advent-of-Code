@@ -19,6 +19,8 @@ for line in vfid:
 
         ranges.append((start, end))
 
+vfid.close()
+
 # Sort our igredient ID ranges to find the fresh ingredient ID ranges
 ranges.sort()
 IDs = []
@@ -39,5 +41,3 @@ for start, end in IDs:
     fresh += (end + 1) - start
 
 print("According to the fresh ingredient ID ranges,", fresh, "ingredient IDs are considered to be fresh")
-
-vfid.close()
